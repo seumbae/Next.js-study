@@ -15,11 +15,3 @@ export default function RootLayout({ children }) {
     </html>
   )
 }
-
-// {
-//   "compilerOptions": {
-//     "paths": {
-//       "@/*": ["./src/*"]
-//     }
-//   }
-// }
