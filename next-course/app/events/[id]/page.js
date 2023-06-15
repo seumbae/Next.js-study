@@ -1,10 +1,11 @@
 "use client";
 import { useParams } from "next/navigation";
 
+import { getEventById } from "@/lib/dummy-data";
 import EventContent from "@/components/event-detail/event-content";
 import EventLogistics from "@/components/event-detail/event-logistics";
 import EventSummary from "@/components/event-detail/event-summary";
-import { getEventById } from "@/lib/dummy-data";
+import ErrorAlert from "@/components/ui/error-alert";
 
 export default function EventDetail() {
 	const param = useParams();
@@ -12,7 +13,11 @@ export default function EventDetail() {
 	const event = getEventById(param.id);
 
 	if (!event) {
-		return <p>No event Found!</p>;
+		return (
+			<ErrorAlert>
+				<p>No event Found!</p>
+			</ErrorAlert>
+		);
 	}
 
 	return (
