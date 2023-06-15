@@ -1,7 +1,14 @@
+'use client';
+
+import { getAllEvents } from "@/lib/dummy-data";
+import EventList from "@/components/events/event-list";
+
 export default function AllEvents() {
+	const events = getAllEvents();
+
 	return (
 		<div>
-			<h1>The Events Page</h1>
+			<EventList items={events} />
 		</div>
 	);
 }
