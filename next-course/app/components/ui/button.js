@@ -2,7 +2,11 @@ import Link from "next/link";
 import styled from "styled-components";
 
 export default function Button(props) {
-	return <StyledLink href={props.link}>{props.children}</StyledLink>;
+	if(props.link){
+		return <StyledLink href={props.link}>{props.children}</StyledLink>;
+	}
+
+	return <button onClick={props.onClick}>{props.children}</button>
 }
 
 const StyledLink = styled(Link)`
